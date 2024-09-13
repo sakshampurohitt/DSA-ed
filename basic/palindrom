@@ -1,0 +1,32 @@
+valid palindrome
+
+
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        string s1;
+        int i;
+        for(i=0;i<s.length();i++){
+        char c = s[i];
+        if(c >= 'A' && c <= 'Z'){
+        s1 += c + 32;
+        }
+        else if(c >= 'a' && c<= 'z')
+        {
+        s1 +=c;
+        }
+        else if (c >= '0' && c <= '9') {
+                s1 += c;
+            }
+        }
+       for(i=0;i<s1.length()/2;i++)
+       if(s1[i] != s1[s1.length()-1-i]){
+       return false;
+       }
+
+       
+      return true;
+
+    
+    }
+};
