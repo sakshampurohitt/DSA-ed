@@ -1,3 +1,4 @@
+https://leetcode.com/problems/course-schedule/description/
 class Solution {
 public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
