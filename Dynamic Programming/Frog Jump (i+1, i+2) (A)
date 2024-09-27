@@ -1,0 +1,20 @@
+// https://www.naukri.com/code360/problems/frog-jump_3621012?leftPanelTabValue=PROBLEM
+#include <bits/stdc++.h> 
+
+int f(int n, vector<int> &heights, vector<int> &cost) {
+    if(cost[n]!=-1) return cost[n];
+
+    int left = f(n-1, heights, cost) + abs(heights[n]-heights[n-1]);
+    int right = INT_MAX;
+    if(n>1)
+        right = f(n-2, heights, cost) + abs(heights[n]- heights[n-2]);
+    return cost[n] = min(left, right);
+}
+
+int frogJump(int n, vector<int> &heights)
+{
+    // Write your code here.
+    vector<int> cost(n+1,-1);
+    cost[0]=0;
+    return f(n-1, heights, cost);
+}
